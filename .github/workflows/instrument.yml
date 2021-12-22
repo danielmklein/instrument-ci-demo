@@ -8,3 +8,5 @@ jobs:
       - name: Hello world action step
         id: hello
         uses: danielmklein/instrument-ci@main
+        env:
+          NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY }}
