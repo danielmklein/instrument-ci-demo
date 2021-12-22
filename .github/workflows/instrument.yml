@@ -1,4 +1,4 @@
-on: [push]
+on: [pull_request]
 
 jobs:
   hello_world_job:
@@ -7,4 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: daniemklein/instrument-ci@main
+        uses: danielmklein/instrument-ci@main
+        env:
+          NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY }}
+          NEW_RELIC_APP_NAME: "GitHub Actions Test"
